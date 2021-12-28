@@ -1,0 +1,114 @@
+# The following are just to deal with Rubocop's pending support of the below.
+
+AllCops:
+  NewCops: disable
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
+# Excluded files are in violation of Rubocop's checks.
+# These will be updated in the future, but for now
+# this gets us through the checks for the time being.
+Metrics/BlockLength:
+  Exclude:
+    - "config/environments/development.rb"
+    - "config/routes.rb"
+    - "db/schema.rb"
+    - "Guardfile"
+    - "spec/**/*"
+
+Metrics/AbcSize:
+  Exclude:
+    - "app/controllers/releases_controller.rb"
+    - "app/controllers/support_tickets_controller.rb"
+    - "app/models/designer_theme.rb"
+    - "app/models/install.rb"
+    - "app/models/repo.rb"
+    - "app/models/shop.rb"
+    - "lib/support/tickets/base.rb"
+
+Metrics/ClassLength:
+  Exclude:
+    - "app/models/designer_theme.rb"
+    - "app/models/install.rb"
+    - "app/models/plan.rb"
+    - "app/models/purchase.rb"
+    - "app/models/registration_validator.rb"
+    - "app/models/registration.rb"
+    - "app/models/release.rb"
+    - "app/models/shop.rb"
+    - "app/models/subscription.rb"
+    - "app/models/text.rb"
+    - "app/models/theme.rb"
+    - "lib/support/tickets/base.rb"
+
+Layout/LineLength:
+  Exclude:
+    - "test/test_helper.rb"
+    - "db/**/*"
+    - "config/**/*"
+    - "bin/**/*"
+    - "Gemfile*"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+
+Metrics/MethodLength:
+  Max: 22
+
+Naming/AccessorMethodName:
+  Exclude:
+    - "app/models/detective.rb"
+    - "app/models/fetch.rb"
+    - "app/models/registration.rb"
+    - "app/models/release.rb"
+    - "app/models/shop.rb"
+    - "app/models/subscription.rb"
+    - "app/models/text.rb"
+
+Naming/FileName:
+  Exclude:
+    - "config/initializers/resque-pool.rb"
+
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+    - "app/models/shop.rb"
+    - "app/models/text.rb"
+    - "lib/support/tickets/base.rb"
+
+Security/Open:
+  Enabled: false
+
+Style/ClassVars:
+  Exclude:
+    - "lib/support/tickets.rb"
+
+Style/MixinUsage:
+  Exclude:
+    - "bin/setup"
+    - "bin/update"
+
+Style/OptionalBooleanParameter:
+  Exclude:
+    - "lib/utilities/error_logging.rb"
+
+Metrics/ModuleLength:
+  Exclude:
+    - "spec/**/*"
